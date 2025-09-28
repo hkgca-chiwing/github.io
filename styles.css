@@ -2097,33 +2097,56 @@ html {
 
 /* 保持課程時間表在所有設備上的一致格式 */
 @media (max-width: 768px) {
+    .schedule-table-container {
+        overflow-x: auto;
+        margin: 0 -20px; /* 擴展到容器邊緣 */
+        padding: 0 20px;
+    }
+    
     .schedule-table {
-        font-size: 0.9rem;
+        font-size: 0.75rem; /* 更小的字體 */
         min-width: 100%;
         table-layout: fixed;
+        width: 100%;
     }
     
     .schedule-table th,
     .schedule-table td {
-        padding: 0.8rem 0.5rem;
+        padding: 0.6rem 0.3rem; /* 減少內邊距 */
         white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        overflow: visible;
+        text-overflow: clip;
+        font-size: 0.75rem; /* 確保字體夠小 */
     }
     
     .schedule-table th:first-child,
     .schedule-table td:first-child {
-        width: 25%;
+        width: 22%; /* 稍微減少節數欄寬度 */
+        min-width: 60px;
     }
     
     .schedule-table th:nth-child(2),
     .schedule-table td:nth-child(2) {
-        width: 37.5%;
+        width: 39%; /* 增加星期六欄寬度 */
+        min-width: 100px;
     }
     
     .schedule-table th:nth-child(3),
     .schedule-table td:nth-child(3) {
-        width: 37.5%;
+        width: 39%; /* 增加星期日欄寬度 */
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-table {
+        font-size: 0.7rem; /* 更小螢幕使用更小字體 */
+    }
+    
+    .schedule-table th,
+    .schedule-table td {
+        padding: 0.5rem 0.2rem;
+        font-size: 0.7rem;
     }
 }
 
