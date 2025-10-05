@@ -52,6 +52,13 @@ body {
     color: #2c3e50;
 }
 
+.logo-image {
+    height: 40px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+}
+
 .nav-logo i {
     margin-right: 10px;
     color: #3498db;
